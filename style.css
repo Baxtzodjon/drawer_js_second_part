@@ -1,0 +1,565 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.item {
+    width: 100%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 12px;
+    overflow: hidden;
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: black;
+        color: white;
+        padding: 20px;
+    }
+
+    .description p {
+        color: gray;
+    }
+
+    .description p b {
+        color: white;
+        cursor: pointer;
+    }
+
+    .description button {
+        all: unset;
+        background-color: white;
+        color: black;
+        border-radius: 12px;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .description button:hover {
+        background-color: rgb(98, 98, 230);
+        color: white;
+        transform: scale(1.05);
+    }
+
+    .description button:active {
+        background-color: #e8bc0e;
+        color: white;
+        transform: scale(1);
+        box-shadow: 0 3px 8px rgba(0, 0, 0.622);
+    }
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.top-div {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.top-div div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.top-div div button {
+    all: unset;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.top-div div button:hover {
+    background-color: rgb(98, 98, 230);
+    color: white;
+    transform: scale(1.05);
+}
+
+.top-div div button:active {
+    background-color: #e8bc0e;
+    transform: scale(1);
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0.622);
+}
+
+.active-btn {
+    background-color: rgb(98, 98, 230) !important;
+    color: white !important;
+}
+
+.cartTab {
+    width: 410px;
+    background-color: white;
+    color: #eee;
+    position: fixed;
+   /*  top: 0;
+    right: 0;
+    bottom: 0; */
+    inset: 0 -410px 0 auto;
+ /*    display: grid;
+    grid-template-rows: 70px 1fr 70px; */
+    transition: .5s;
+    box-shadow: 0 3px 8px rgb(169, 169, 169);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+body.showCart .cartTab {
+    inset: 0 0 0 auto;
+}
+
+.cartTab h1 {
+    padding: 20px;
+    margin: 0;
+    color: #1f2026;
+    font-size: 32px;
+}
+
+.close_times {
+    all: unset;
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    color: #1f2026;
+}
+
+.cart_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.span_plus {
+    color: #1f2026;
+    font-size: 32px;
+    opacity: 0.54;
+}
+
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button {
+    background-color: #e8bc0e;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cartTab .btn .close2 {
+    background-color: #eee;
+}
+
+.cartTab .listCart .item2 img {
+    width: 100%;
+}
+
+.cartTab .listCart .item2 {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.listCart .quatity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.listCart .quatity span:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+}
+
+.listCart .item:nth-child(even) {
+    background-color: #eee1;
+}
+
+.listCart {
+    overflow: auto;
+}
+
+.listCart::-webkit-scrollbar {
+    width: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.big-block {
+    width: 400px;
+    height: 360px;
+    border: 1px solid #c1c0c0;
+}
+
+.block_1 {
+    display: flex;
+    gap: 10px;
+}
+
+.checkbox {
+    width: 25px;
+    height: 25px;
+    margin: 20px 0 0 20px;
+    cursor: pointer;
+    accent-color: #7000ff;
+}
+
+.p_text {
+    color: #1f2026;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 20px 0 0 0px;
+}
+
+.box {
+    background: #f2f4f7;
+    border-radius: 10px;
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 1rem;
+    width: 350px;
+    height: 45px;
+    padding: 0.25rem 0.5rem;
+    margin: 15px 0 0 23px;
+}
+
+.box_p_text {
+    text-align: center;
+    font-size: 12px;
+    color: #8b8e99;
+    font-weight: 400;
+}
+
+.box_p_text2 {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 400;
+    border: none;
+    color: #700fff;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.hr {
+    opacity: 0.3;
+}
+
+.box_view {
+    position: relative;
+    display: flex;
+}
+
+.checkbox_2 {
+    position: absolute;
+    top: 55px;
+    width: 25px;
+    height: 25px;
+    margin: 20px 0 0 20px;
+    cursor: pointer;
+    accent-color: #7000ff;
+}
+
+.cover {
+    width: 78px;
+    height: 104px;
+    object-fit: contain;
+    margin: 35px 0 0 60px;
+    border-radius: 12px;
+}
+
+.link_text {
+    text-decoration: none;
+    font-size: 14px;
+    color: #1f2026;
+    margin: 35px 0 0 10px;
+}
+
+.relative {
+    position: relative;
+}
+
+.a_lot_of_texts {
+    position: absolute;
+    top: -55px;
+    left: 150px;
+}
+
+.texts_1 {
+    display: flex;
+}
+
+.salesman {
+    color: #8b8e99;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.link_company {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: #1f2026;
+    margin-left: 3px;
+}
+
+.texts_2 {
+    display: flex;
+    margin-top: 3px;
+}
+
+.texts_3 {
+    display: flex;
+    margin-top: 3px;
+}
+
+.new_price {
+    text-align: right;
+    color: #1f2026;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px 15px 0 0;
+}
+
+.old_price {
+    text-decoration: line-through;
+    color: #8b8e99;
+    text-align: right;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 5px 15px 0 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counter {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #bcbcbc;
+    margin-left: 25px;
+    border-radius: 3px;
+}
+
+.minus-line svg {
+    width: 15px;
+    height: 15px;
+    color: #1f2026;
+    margin: 13px 0 0 11px;
+    cursor: pointer;
+}
+
+.digit {
+    margin-left: 12px;
+    font-size: 20px;
+    color: #1f2026;
+    margin-top: 8px;
+}
+
+.plus svg {
+    width: 15px;
+    height: 15px;
+    color: #1f2026;
+    cursor: pointer;
+    margin: 12px 0 0 10px;
+}
+
+.trashIcon {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px 15px 0 0;
+    cursor: pointer;
+}
+
+.delete {
+    color: #8b8e99;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.delete:hover {
+    color: #1f2026;
+    font-weight: 600
+}
+
+.price_counter {
+    margin-left: -60px;
+    font-size: 12px;
+    color: #595b66;
+}
+
+.cartTab_bellissimo_pizza {
+    width: 375px;
+    height: 140px;
+    box-shadow: 0 3px 8px rgb(169, 169, 169);
+    border-radius: 12px;
+    margin: 25px 0 0 15px;
+}
+
+.cart_flex_bellissimo_pizza {
+    margin-left: 340px;
+}
+
+.box_block_bellissimo_pizza {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.img_pizza {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin: 23px 0 0 12px;
+}
+
+.judge_pizza {
+    color: #000;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.type_of_pizza {
+    position: absolute;
+    top: 77px;
+    /* когда в js будет что-то нето надо изменить left: 60; */
+    left: 102px;
+    color: rgb(153, 153, 153);
+}
+
+.close_times2 {
+    all: unset;
+    width: 25px;
+    height: 25px;
+    margin: 20px 0 0 18px;
+    cursor: pointer;
+    background-color: #EEEEEE;
+    color: #1f2026;
+    border-radius: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.counter_bellissimo_pizza {
+    width: 90px;
+    height: 45px;
+    background-color: #efefef;
+    margin-left: 80px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* когда в html будет что-то нето надо убирать margin-right */
+    margin-right: 15px;
+}
+
+.minus_bellissimo_pizza {
+    color: #000000;
+    font-size: 35px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.digit_bellissimo_pizza {
+    color: #000000;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.plus_bellissimo_pizza {
+    color: #000000;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.real_price {
+    position: absolute;
+    top: 77px;
+    left: 175px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000;
+    margin-top: 3px;
+}
+
+.price_bellissimo_pizza {
+    position: absolute;
+    top: 77px;
+    left: 265px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    color: #000;
+    margin-top: 3px;
+}
+
+.trashIcon2 {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+    left: 260px;
+    cursor: pointer;
+}
